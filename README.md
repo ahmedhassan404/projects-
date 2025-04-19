@@ -1,109 +1,165 @@
-# AI-Driven Tech Interview Prep & Verification Platform
+# AI-Driven Tech Interview Prep Platform
 
-## Vision
+## Project Overview
 
-To become the global gold standard for verified, AI-assisted technical interview preparation—trusted by candidates, educators, and hiring teams worldwide.
+### Objective
+Build a cloud-native, AI-powered platform to help users prepare for technical interviews through:
 
----
+- Real-time coding challenges with integrity verification
+- System design simulations with authenticity checks
+- Behavioral interview practice using voice interaction analysis
+- Dual-role functionality with proctoring capabilities
+- AI-powered feedback and cheating detection analytics
+- Verified certification for premium users
 
-## Enhanced Features
-
-### 1. Adaptive AI Interview Simulator
-- Dynamic question difficulty based on real-time candidate performance
-- GPT-5 fine-tuned for interview roleplay (e.g., peer, mentor, or strict interviewer)
-- Live feedback during system design sessions
-
-### 2. Zero Trust-Based Candidate Integrity Layer
-- Behavioral biometrics (mouse dynamics, typing cadence)
-- Device fingerprinting and session anomaly detection
-- Blockchain-backed logging of verified sessions
-
-### 3. Global Marketplace for Verified Talent
-- Opt-in talent discovery with public skill badges and integrity scores
-- GitHub and LinkedIn integration
-- “Verified by [Platform]” tags on external job profiles
-
-### 4. AI-Powered Personalized Learning Paths
-- Role-specific preparation tracks (e.g., Google SWE, Amazon SDE II)
-- Weakness-targeted sessions based on analytics
-- Micro-learning module generation for improvement areas
-
-### 5. University & Bootcamp Partnership Mode
-- Real-time dashboards for tracking student performance
-- Institutional integrity certificate issuance
-- Custom interview packages for academic partners
+### Target Users
+- Job seekers preparing for verified technical interviews
+- Companies seeking reliable candidate assessment
+- Tech educators requiring authenticated results
 
 ---
 
-## Technical Stack
+## Enhanced Core Features
 
-| Category                | Technologies                                  |
-|-------------------------|-----------------------------------------------|
-| Real-time AI Interviews | OpenAI GPT-5, HuggingFace Transformers        |
-| Identity & Integrity    | Sift, BioID, MetaMask                         |
-| Behavioral Biometrics   | TypingDNA, Mouseflow                          |
-| Learning Engine         | LangChain, Pinecone                          |
-| Data Layer              | PostgreSQL, Redis, IPFS                       |
-| CI/CD & Cloud           | AWS, Docker, Kubernetes, Terraform            |
-| Blockchain Ledger       | Polygon, Hyperledger                          |
+### A. Coding Challenges with Integrity Monitoring
+- LeetCode API integration with real-time plagiarism detection
+- Multi-dimensional cheating prevention:
+  - Code similarity analysis (AWS CodeGuru + GitHub API)
+  - Activity monitoring (tab switching, copy-paste detection)
+  - Webcam proctoring (opt-in)
+- AI assistant with ethical usage tracking
 
----
+### B. Authenticated System Design Interviews
+- AI-generated prompts with solution fingerprinting
+- Whiteboard integrity features:
+  - Stroke pattern analysis
+  - Template detection (AWS Rekognition)
+  - Real-time collaboration monitoring
+- Digital watermarking for shared designs
 
-## Business Model Enhancements
+### C. Verified Behavioral Interviews
+- Voice biometrics for speaker verification
+- Response authenticity checks:
+  - Unnatural delay detection
+  - Background speaker identification
+  - STAR-method consistency analysis
+- Emotion and tone analysis with fraud flags
 
-### Verified Talent Network (VTX)
-- Subscription access for recruiters
-- Verified-only resume pool
-- API access for ATS integrations
+### D. Dual-Role Mode with Proctoring
+- **Interviewee Mode:** 
+  - Optional verified sessions with enhanced monitoring
+  - Integrity score included in practice reports
+- **Interviewer Mode:**
+  - Cheating alert dashboard
+  - Session playback with suspicious activity highlights
+  - AI-assisted authenticity evaluation
 
-### White-Label SaaS Licensing
-- Licensing integrity modules to enterprises
-- Custom branding and deployment
+### E. Advanced Analytics & Certification
+- Integrity scoring system
+- Verified certification badges for clean sessions
+- Comparative analytics against verified user base
+- Detailed authenticity reports for enterprise users
 
-### Sponsored Certification Tracks
-- Company-sponsored prep tracks
-- Bonus: fast-track application passes
-
----
-
-## Global Expansion Strategy
-
-- Multilingual voice and subtitle support
-- Cultural adaptation in behavioral questions
-- Regional cheating pattern models
-
----
-
-## Trust, Ethics, and Fairness
-
-### Transparent Detection Console
-- Visual explanation of every integrity flag
-- Realtime evidence snapshots
-
-### Ethics Review Panel
-- Human-in-the-loop override
-- Community-reviewed integrity disputes
-
-### Accessibility Enhancements
-- Voice-to-code and screen reader support
-- Time-adjusted challenges for neurodiverse users
+### F. Trust & Safety Systems
+- Three-strike policy for violations
+- Appeal process with human review
+- Differentiated monitoring levels:
+  - Basic (code analysis only)
+  - Standard (+ behavioral monitoring)
+  - Premium (full proctoring)
 
 ---
 
-## Refined Value Proposition
+## Enhanced Technical Stack
 
-**Build Skills. Prove Integrity. Unlock Opportunity.**  
-The world’s first AI-powered platform that not only prepares users for technical interviews but verifies and certifies their authenticity.
+| Category              | New Technologies Added                  |
+|-----------------------|----------------------------------------|
+| Integrity Monitoring  | AWS CodeGuru, GitHub API, AWS Rekognition |
+| Proctoring           | WebRTC, TensorFlow.js, OpenCV          |
+| Voice Analysis       | AWS Speaker Recognition, VoiceID       |
+| Fraud Detection      | AWS Fraud Detector, Custom ML Models   |
+| Reporting            | AWS QuickSight, PDF watermarking       |
+
+---
+
+## Updated Development Roadmap
+
+### Phase 1 (MVP - 3 Months)
+- Basic code similarity detection
+- Tab switching monitoring
+- Initial authentication infrastructure
+
+### Phase 2 (6 Months)
+- Full cheating detection suite
+- Behavioral integrity analysis
+- Appeals and review system
+
+### Phase 3 (9-12 Months)
+- Verified certification program
+- Enterprise reporting dashboard
+- Continuous model improvement
+
+### Phase 4 (12+ Months)
+- Biometric verification
+- Cross-platform activity correlation
+- Blockchain-backed credentialing
+
+---
+
+## Enhanced Business Model
+
+### New Premium Tiers
+- **Verified Individual ($29/month):**
+  - Certified practice sessions
+  - Shareable integrity reports
+  - Priority appeal processing
+
+- **Enterprise Trust ($99/user/year):**
+  - API access to verification system
+  - Custom cheating detection rules
+  - Audit trails for compliance
+
+### Value Proposition
+- "Your Prep. Our Verification. Their Confidence."
+- First interview platform with built-in HR-grade proctoring
+- Trusted by top tech companies for candidate screening
+
+---
+
+## Compliance & Ethics
+
+1. **Privacy Framework**
+   - GDPR-compliant data handling
+   - End-to-end encryption for sensitive data
+   - Right-to-explanation for all flags
+
+2. **Transparency Measures**
+   - Open-sourced detection algorithms
+   - User-accessible monitoring logs
+   - Annual bias audit reports
+
+3. **Fairness Safeguards**
+   - Disability accommodations
+   - Cultural sensitivity reviewers
+   - Context-aware detection thresholds
 
 ---
 
 ## Call to Action
 
-Join us in transforming tech hiring and skill certification.
+Seeking partners to build the future of authenticated technical interviewing:
 
-- Security Engineers – Strengthen proctoring systems  
-- AI/ML Engineers – Build ethical detection models  
-- Educators & Bootcamps – Offer verifiable outcomes  
-- Recruiters & HR – Integrate with our certification API
+- **Security Engineers** to harden our monitoring systems
+- **Ethics Advisors** for responsible AI development
+- **HR Tech Partners** for industry validation
 
-**Contact:** [Your Email] | [LinkedIn] | [GitHub] | [Pitch Deck URL (if available)]
+Contact: [Your Email] | [LinkedIn] | [GitHub]
+
+---
+
+## Key Differentiators
+
+1. **Holistic Integrity** - From code to whiteboard to behavioral
+2. **Adaptive Detection** - Learns new cheating patterns
+3. **Verified Credentials** - Blockchain-backed skill certification
+4. **Ethical Enforcement** - Balanced approach to fairness
