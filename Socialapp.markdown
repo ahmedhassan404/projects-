@@ -59,38 +59,119 @@ A full-stack social media application enabling users to connect, share content, 
 
 ```
 social-app/
-├── client/                         # React frontend
+├── client/                         
 │   ├── src/
-│   │   ├── components/             # Reusable UI components
-│   │   ├── pages/                  # Route components
-│   │   ├── hooks/                  # Custom React hooks
-│   │   ├── store/                  # Redux store configuration
-│   │   │   ├── slices/             # Redux slices
-│   │   │   ├── middleware/         # Redux middleware
-│   │   │   └── index.js            # Store setup
-│   │   ├── services/               # API service layer
-│   │   ├── utils/                  # Helper functions
-│   │   └── assets/                 # Static assets
+│   │   ├── components/
+│   │   │   ├── common/
+│   │   │   │   ├── Navbar.jsx
+│   │   │   │   ├── Sidebar.jsx
+│   │   │   │   └── Loader.jsx
+│   │   │   ├── forms/
+│   │   │   │   ├── LoginForm.jsx
+│   │   │   │   ├── SignupForm.jsx
+│   │   │   │   └── PostForm.jsx
+│   │   │   ├── layout/
+│   │   │   │   └── MainLayout.jsx
+│   │   │   ├── post/
+│   │   │   │   ├── PostCard.jsx
+│   │   │   │   ├── PostList.jsx
+│   │   │   │   └── CommentCard.jsx
+│   │   │   ├── chat/
+│   │   │   │   ├── ChatBox.jsx
+│   │   │   │   └── MessageBubble.jsx
+│   │   │   └── user/
+│   │   │       ├── UserCard.jsx
+│   │   │       └── ProfileHeader.jsx
+│   │   ├── pages/
+│   │   │   ├── Auth/
+│   │   │   │   ├── Login.jsx
+│   │   │   │   └── Signup.jsx
+│   │   │   ├── Feed.jsx
+│   │   │   ├── Profile.jsx
+│   │   │   ├── Chat.jsx
+│   │   │   ├── Search.jsx
+│   │   │   └── Settings.jsx
+│   │   ├── hooks/
+│   │   │   ├── useAuth.js
+│   │   │   ├── useSocket.js
+│   │   │   └── useForm.js
+│   │   ├── store/
+│   │   │   ├── index.js
+│   │   │   ├── authSlice.js
+│   │   │   ├── postSlice.js
+│   │   │   ├── chatSlice.js
+│   │   │   └── notificationSlice.js
+│   │   ├── services/
+│   │   │   ├── api.js
+│   │   │   ├── authService.js
+│   │   │   ├── postService.js
+│   │   │   ├── userService.js
+│   │   │   └── chatService.js
+│   │   ├── utils/
+│   │   │   ├── validators.js
+│   │   │   ├── formatDate.js
+│   │   │   ├── constants.js
+│   │   │   └── storage.js
+│   │   ├── assets/
+│   │   │   ├── images/
+│   │   │   └── styles/
+│   │   │       └── global.css
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │   └── routes.js
 │   ├── public/
+│   │   ├── index.html
+│   │   ├── manifest.json
+│   │   └── robots.txt
 │   ├── package.json
 │   └── vite.config.js
-├── server/                         # Node.js backend
+├── server/                         
 │   ├── src/
-│   │   ├── index.js                # Application entry point
-│   │   ├── routes/                 # API route handlers
-│   │   ├── middleware/             # Express middleware
-│   │   ├── models/                 # Mongoose schemas
-│   │   ├── services/               # Business logic
-│   │   ├── utils/                  # Utility functions
-│   │   └── config/                 # Application configuration
-│   ├── uploads/                    # Local file storage
-│   └── package.json
-├── shared/                         # Shared utilities/constants
+│   │   ├── config/
+│   │   │   ├── db.js
+│   │   │   └── env.js
+│   │   ├── models/
+│   │   │   ├── User.js
+│   │   │   ├── Post.js
+│   │   │   ├── Comment.js
+│   │   │   ├── Message.js
+│   │   │   └── Notification.js
+│   │   ├── controllers/
+│   │   │   ├── authController.js
+│   │   │   ├── userController.js
+│   │   │   ├── postController.js
+│   │   │   ├── commentController.js
+│   │   │   ├── chatController.js
+│   │   │   └── notificationController.js
+│   │   ├── routes/
+│   │   │   ├── authRoutes.js
+│   │   │   ├── userRoutes.js
+│   │   │   ├── postRoutes.js
+│   │   │   ├── commentRoutes.js
+│   │   │   ├── chatRoutes.js
+│   │   │   └── notificationRoutes.js
+│   │   ├── middleware/
+│   │   │   ├── authMiddleware.js
+│   │   │   ├── errorMiddleware.js
+│   │   │   └── validateMiddleware.js
+│   │   ├── utils/
+│   │   │   ├── token.js
+│   │   │   ├── email.js
+│   │   │   └── socket.js
+│   │   ├── app.js
+│   │   └── server.js
+│   ├── uploads/
+│   ├── package.json
+│   └── .env
+├── shared/
 │   ├── constants/
 │   └── package.json
-├── docs/                           # Documentation
-├── package.json                    # Root package.json
-└── README.md
+├── docs/
+│   ├── architecture.md
+│   ├── api-reference.md
+│   └── database-schema.md
+├── README.md
+└── .gitignore
 ```
 
 ---
