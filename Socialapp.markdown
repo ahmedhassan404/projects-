@@ -32,7 +32,7 @@ A full-stack social media application enabling users to connect, share content, 
 * **Backend**: Node.js, Express 5
 * **Database**: MongoDB with Mongoose ODM
 * **Real-time Communication**: Socket.io
-* **Authentication**: JWT (access/refresh tokens)
+* **Authentication**: JWT (access/refresh tokens),2FA
 * **File Processing**: Multer for uploads
 ---
 
