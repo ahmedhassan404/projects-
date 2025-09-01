@@ -1,4 +1,4 @@
-# Social App - Agile Development Documentation
+# Social App -Development Documentation
 
 ## 1. Overview
 
