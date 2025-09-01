@@ -27,16 +27,13 @@ A full-stack social media application enabling users to connect, share content, 
 
 ### Tech Stack Overview
 
-* **Frontend**: React 18, Vite, Tailwind CSS
+* **Frontend**: React 19, Vite, Tailwind CSS
 * **State Management**: Redux Toolkit + React-Redux
 * **Backend**: Node.js, Express 5
 * **Database**: MongoDB with Mongoose ODM
 * **Real-time Communication**: Socket.io
 * **Authentication**: JWT (access/refresh tokens)
 * **File Processing**: Multer for uploads
-* **Validation**: Joi schemas
-* **Testing**: Jest, Supertest, Cypress
-
 ---
 
 ## 2. Architecture & Directory Structure
