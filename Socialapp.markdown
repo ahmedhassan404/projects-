@@ -1,114 +1,136 @@
-Social App - Agile Development Documentation
-1. Overview
-Project Summary
+# Social App - Agile Development Documentation
+
+## 1. Overview
+
+### Project Summary
+
 A full-stack social media application enabling users to connect, share content, and communicate in real-time. The platform provides core social networking features including user profiles, content sharing, engagement mechanisms, and real-time messaging.
-System Objectives
 
-Provide a seamless social networking experience
-Enable real-time communication between users
-Ensure high performance and scalability
-Maintain robust security and data privacy
-Deliver responsive user experience across devices
+### System Objectives
 
-Key Features & Modules
+* Provide a seamless social networking experience
+* Enable real-time communication between users
+* Ensure high performance and scalability
+* Maintain robust security and data privacy
+* Deliver responsive user experience across devices
 
-User Management: Registration, authentication, profile management
-Content System: Post creation, media uploads, feed management
-Social Graph: Following/follower system, relationship management
-Engagement: Likes, comments, and interactions
-Real-time Chat: Instant messaging with read receipts and typing indicators
-Notifications: Real-time updates and activity alerts
-Administration: Content moderation and user management
-Search & Discovery: User and content discovery features
+### Key Features & Modules
 
-Tech Stack Overview
+* **User Management**: Registration, authentication, profile management
+* **Content System**: Post creation, media uploads, feed management
+* **Social Graph**: Following/follower system, relationship management
+* **Engagement**: Likes, comments, and interactions
+* **Real-time Chat**: Instant messaging with read receipts and typing indicators
+* **Notifications**: Real-time updates and activity alerts
+* **Administration**: Content moderation and user management
+* **Search & Discovery**: User and content discovery features
 
-Frontend: React 18, Vite, Tailwind CSS
-State Management: Redux Toolkit + React-Redux
-Backend: Node.js, Express 5
-Database: MongoDB with Mongoose ODM
-Real-time Communication: Socket.io
-Authentication: JWT (access/refresh tokens)
-File Processing: Multer for uploads
-Validation: Joi schemas
-Testing: Jest, Supertest, Cypress
+### Tech Stack Overview
 
-2. Architecture & Directory Structure
-System Architecture Diagram
-┌─────────────────┐ HTTP/REST ┌─────────────────┐ Database ┌─────────────────┐
-│ React Client    │◄────────────────►│ Express API     │◄───────────────►│ MongoDB         │
-│ (Port 3000)     │                 │ (Port 8080)     │                │ (Atlas/Local)   │
-└─────────────────┘                 └─────────────────┘                └─────────────────┘
-        │                                  │
-        │ WebSocket                       │
-        └──────────────────────────────────┘
+* **Frontend**: React 18, Vite, Tailwind CSS
+* **State Management**: Redux Toolkit + React-Redux
+* **Backend**: Node.js, Express 5
+* **Database**: MongoDB with Mongoose ODM
+* **Real-time Communication**: Socket.io
+* **Authentication**: JWT (access/refresh tokens)
+* **File Processing**: Multer for uploads
+* **Validation**: Joi schemas
+* **Testing**: Jest, Supertest, Cypress
+
+---
+
+## 2. Architecture & Directory Structure
+
+### System Architecture Diagram
+
+```
+┌─────────────────┐    HTTP/REST     ┌─────────────────┐    Database     ┌─────────────────┐
+│   React Client  │◄────────────────►│  Express API    │◄───────────────►│    MongoDB      │
+│   (Port 3000)   │                  │  (Port 8080)    │                 │   (Atlas/Local) │
+└─────────────────┘                  └─────────────────┘                 └─────────────────┘
+         │                                    │
+         │           WebSocket                │
+         └───────────────────────────────────┘
                     Socket.io
-                   (Real-time)
+                    (Real-time)
+```
 
-Directory Structure
+### Directory Structure
+
+```
 social-app/
-├── client/                      # React frontend
+├── client/                         # React frontend
 │   ├── src/
-│   │   ├── components/          # Reusable UI components
-│   │   ├── pages/               # Route components
-│   │   ├── hooks/               # Custom React hooks
-│   │   ├── store/               # Redux store configuration
-│   │   │   ├── slices/          # Redux slices
-│   │   │   ├── middleware/      # Redux middleware
-│   │   │   └── index.js         # Store setup
-│   │   ├── services/            # API service layer
-│   │   ├── utils/               # Helper functions
-│   │   └── assets/              # Static assets
+│   │   ├── components/             # Reusable UI components
+│   │   ├── pages/                  # Route components
+│   │   ├── hooks/                  # Custom React hooks
+│   │   ├── store/                  # Redux store configuration
+│   │   │   ├── slices/             # Redux slices
+│   │   │   ├── middleware/         # Redux middleware
+│   │   │   └── index.js            # Store setup
+│   │   ├── services/               # API service layer
+│   │   ├── utils/                  # Helper functions
+│   │   └── assets/                 # Static assets
 │   ├── public/
 │   ├── package.json
 │   └── vite.config.js
-├── server/                      # Node.js backend
+├── server/                         # Node.js backend
 │   ├── src/
-│   │   ├── index.js             # Application entry point
-│   │   ├── routes/              # API route handlers
-│   │   ├── middleware/          # Express middleware
-│   │   ├── models/              # Mongoose schemas
-│   │   ├── services/            # Business logic
-│   │   ├── utils/               # Utility functions
-│   │   └── config/              # Application configuration
-│   ├── uploads/                 # Local file storage
+│   │   ├── index.js                # Application entry point
+│   │   ├── routes/                 # API route handlers
+│   │   ├── middleware/             # Express middleware
+│   │   ├── models/                 # Mongoose schemas
+│   │   ├── services/               # Business logic
+│   │   ├── utils/                  # Utility functions
+│   │   └── config/                 # Application configuration
+│   ├── uploads/                    # Local file storage
 │   └── package.json
-├── shared/                      # Shared utilities/constants
+├── shared/                         # Shared utilities/constants
 │   ├── constants/
 │   └── package.json
-├── docs/                        # Documentation
-├── package.json                 # Root package.json
+├── docs/                           # Documentation
+├── package.json                    # Root package.json
 └── README.md
+```
 
-3. Database Design
-ER Diagram (Entities & Relationships)
-User
- │
- │ 1     *
- │╱─────Post
- │       │
- │       │ 1     *
- │       │╱─────Comment
- │       │
- │       │ 1     *
- │       │╱─────Like
- │
- │ *     *
- │╱─────╱│
- Follow  │
- │       │
- │       │ *     *
- │       │╱─────╱│
- │    Conversation
- │       │
- │       │ 1     *
- │       │╱─────Message
- │
- │ 1     *
- │╱─────Notification
+---
 
-Database Schema
-User Collection
+## 3. Database Design
+
+### ER Diagram (Entities & Relationships)
+
+```
+    User
+     │
+     │ 1     *
+     │╱─────Post
+     │       │
+     │       │ 1     *
+     │       │╱─────Comment
+     │       │
+     │       │ 1     *
+     │       │╱─────Like
+     │
+     │ *     *
+     │╱─────╱│
+     Follow  │
+     │       │
+     │       │ *     *
+     │       │╱─────╱│
+     │    Conversation
+     │       │
+     │       │ 1     *
+     │       │╱─────Message
+     │
+     │ 1     *
+     │╱─────Notification
+```
+
+### Database Schema
+
+#### User Collection
+
+```javascript
 {
   _id: ObjectId,
   handle: String,           // Unique, indexed
@@ -127,8 +149,11 @@ User Collection
   createdAt: Date,          // Indexed
   updatedAt: Date           // Indexed
 }
+```
 
-Post Collection
+#### Post Collection
+
+```javascript
 {
   _id: ObjectId,
   userId: ObjectId,        // Ref User, indexed
@@ -145,8 +170,11 @@ Post Collection
   createdAt: Date,         // Indexed
   updatedAt: Date
 }
+```
 
-Comment Collection
+#### Comment Collection
+
+```javascript
 {
   _id: ObjectId,
   postId: ObjectId,        // Ref Post, indexed
@@ -156,8 +184,11 @@ Comment Collection
   createdAt: Date,         // Indexed
   updatedAt: Date
 }
+```
 
-Message Collection
+#### Message Collection
+
+```javascript
 {
   _id: ObjectId,
   conversationId: ObjectId, // Ref Conversation, indexed
@@ -172,38 +203,46 @@ Message Collection
   readBy: [ObjectId],       // Array of User refs
   createdAt: Date           // Indexed
 }
+```
 
-4. API Design
-Authentication Endpoints
+---
 
-POST /api/v1/auth/signup - User registration
-POST /api/v1/auth/login - User login
-POST /api/v1/auth/refresh - Refresh access token
-POST /api/v1/auth/logout - User logout
-GET /api/v1/auth/me - Get current user
+## 4. API Design
 
-User Endpoints
+### Authentication Endpoints
 
-GET /api/v1/users/:id - Get user profile
-GET /api/v1/users - Search users
-PATCH /api/v1/users/:id - Update user profile
-POST /api/v1/users/:id/follow - Follow user
-DELETE /api/v1/users/:id/follow - Unfollow user
+* `POST /api/v1/auth/signup` - User registration
+* `POST /api/v1/auth/login` - User login
+* `POST /api/v1/auth/refresh` - Refresh access token
+* `POST /api/v1/auth/logout` - User logout
+* `GET /api/v1/auth/me` - Get current user
 
-Post Endpoints
+### User Endpoints
 
-GET /api/v1/posts/feed - Get user feed
-GET /api/v1/posts - Get posts with filters
-POST /api/v1/posts - Create new post
-POST /api/v1/posts/:id/like - Like/unlike post
+* `GET /api/v1/users/:id` - Get user profile
+* `GET /api/v1/users` - Search users
+* `PATCH /api/v1/users/:id` - Update user profile
+* `POST /api/v1/users/:id/follow` - Follow user
+* `DELETE /api/v1/users/:id/follow` - Unfollow user
 
-Chat Endpoints
+### Post Endpoints
 
-GET /api/v1/chat/conversations - Get user conversations
-POST /api/v1/chat/conversations - Create conversation
-POST /api/v1/chat/conversations/:id/messages - Send message
+* `GET /api/v1/posts/feed` - Get user feed
+* `GET /api/v1/posts` - Get posts with filters
+* `POST /api/v1/posts` - Create new post
+* `POST /api/v1/posts/:id/like` - Like/unlike post
 
-5. Redux State Management Structure
+### Chat Endpoints
+
+* `GET /api/v1/chat/conversations` - Get user conversations
+* `POST /api/v1/chat/conversations` - Create conversation
+* `POST /api/v1/chat/conversations/:id/messages` - Send message
+
+---
+
+## Redux State Management Structure
+
+```javascript
 {
   auth: {
     user: null,
@@ -245,3 +284,4 @@ POST /api/v1/chat/conversations/:id/messages - Send message
     error: null
   }
 }
+```
