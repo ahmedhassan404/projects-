@@ -282,7 +282,16 @@ social-app/
   createdAt: Date           // Indexed
 }
 ```
-
+#### Conversation schema
+```javascript
+{
+  "_id": "ObjectId",
+  "participantIds": ["ObjectId"], // Array of User refs, indexed
+  "lastMessageId": "ObjectId",   // Ref Message, indexed
+  "createdAt": "Date",           // Indexed
+  "updatedAt": "Date"            // Indexed
+}
+```
 ---
 
 ## 4. API Design
